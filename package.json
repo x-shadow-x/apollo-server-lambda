@@ -1,0 +1,37 @@
+{
+  "name": "apollo-server-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "start:sls": "env-cmd -f .env.development.local tsc-watch -p tsconfig.build.json --onSuccess \"sls offline\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x-shadow-x/apollo-server-lambda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/x-shadow-x/apollo-server-lambda/issues"
+  },
+  "homepage": "https://github.com/x-shadow-x/apollo-server-lambda#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.6.0",
+    "@typescript-eslint/parser": "4.6.0",
+    "env-cmd": "10.1.0",
+    "eslint": "7.12.1",
+    "eslint-config-prettier": "6.15.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "prettier": "2.1.2",
+    "serverless-offline": "6.8.0",
+    "tsc-watch": "4.2.9",
+    "typescript": "4.0.5"
+  },
+  "dependencies": {
+    "apollo-server-express": "2.19.0",
+    "express": "4.17.1",
+    "serverless-http": "2.6.0"
+  }
+}

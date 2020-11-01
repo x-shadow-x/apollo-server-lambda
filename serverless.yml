@@ -1,0 +1,34 @@
+service: phplatform-nestjs-bff
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  profile: default # Config your AWS Profile
+  environment: # Service wide environment variables
+    NODE_ENV: production
+
+custom:
+  serverless-offline:
+    httpPort: 5002
+
+plugins:
+  - serverless-offline
+
+package:
+  exclude:
+    - .git/**
+    - src/**
+    - test/**
+    - nodemon.json
+    - README.md
+  excludeDevDependencies: true
+
+functions:
+  index:
+    handler: dist/main.handler
+    events:
+      - http:
+          cors: true
+          path: '/{proxy+}'
+          method: any

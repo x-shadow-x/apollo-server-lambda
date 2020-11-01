@@ -1,0 +1,13 @@
+{
+  "eslint.enable": true,
+  "eslint.packageManager": "yarn",
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  "workbench.editor.showTabs": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+  
+}
